@@ -1,0 +1,112 @@
+﻿@model QuintaApp.Models.Usuario
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Validação de Usuário</h2>
+
+@using (Html.BeginForm("Resultado", "Usuario", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend> Dados do Usuário</legend>
+
+    @*<div class="editor-label">
+            @Html.LabelFor(m => m.UsuNome)
+        </div>*@
+
+    <div>
+        <b>Nome do Usuário</b>
+    </div>
+
+    @**@<div class="editor-field">
+        @Html.EditorFor(m => m.UsuNome)
+        @Html.ValidationMessageFor(m => m.UsuNome)
+    </div>
+
+    <div>
+        <b>Observações</b>
+    </div>
+
+    @*<div class="editor-label">
+        @Html.LabelFor(m => m.UsuObs)
+    </div>*@
+
+    <div class="editor-field">
+        @Html.TextAreaFor(m => m.UsuObs)
+        @Html.ValidationMessageFor(m => m.UsuObs)
+    </div>
+
+    <div>
+        <b>Data de Nascimento</b>
+    </div>
+
+    @*<div class="editor-label">
+        @Html.LabelFor(m => m.UsuNasc)
+    </div>*@
+
+    <div class="editor-field">
+        @Html.EditorFor(m => m.UsuNasc)
+        @Html.ValidationMessageFor(m => m.UsuNasc)
+    </div>
+
+    <div>
+        <b>Email</b>
+    </div>
+
+    @*<div class="editor-label">
+        @Html.LabelFor(m => m.UsuEmail)
+    </div>*@
+
+    <div class="editor-field">
+        @Html.EditorFor(m => m.UsuEmail)
+        @Html.ValidationMessageFor(m => m.UsuEmail)
+    </div>
+
+    <div>
+        <b>Login</b>
+    </div>
+
+    @*<div class="editor-label">
+        @Html.LabelFor(m => m.UsuLogin)
+    </div>*@
+
+    <div class="editor-field">
+        @Html.EditorFor(m => m.UsuLogin)
+        @Html.ValidationMessageFor(m => m.UsuLogin)
+
+        <div>
+            <b>Senha</b>
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(m => m.UsuSenha)
+        </div>*@
+
+        <div class="editor-field">
+            @Html.PasswordFor(m => m.UsuSenha)
+            @Html.ValidationMessageFor(m => m.UsuSenha)
+
+            <div>
+                <b>Confirmar Senha</b>
+            </div>
+        </div>
+
+       @* <div class="editor-label">
+            @Html.LabelFor(m => m.UsuConfirmarSenha)
+        </div>*@
+
+        <div class="editor-field">
+            @Html.PasswordFor(m => m.UsuConfirmarSenha)
+            @Html.ValidationMessageFor(m => m.UsuConfirmarSenha)
+        </div>
+    </div>
+    <br />
+
+    <p> <input type="submit" value="Cadastrar" /> </p>
+
+</fieldset>
+    
+}
+
